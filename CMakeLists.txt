@@ -2,6 +2,25 @@ cmake_minimum_required(VERSION 3.16)
 project(port)
 
 
+if(INCLUDE_FREEIMAGE)
+
+    add_subdirectory(imaging/freeimage)
+
+endif()
+
+
+
+if(INCLUDE_FREETYPE)
+
+    set(FT_WITH_PNG_PORT png)
+
+    add_subdirectory(imaging/png)
+
+    add_subdirectory(graphics/freetype)
+
+endif()
+
+
 
 if(INCLUDE_ICONV)
 
