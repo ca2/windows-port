@@ -4,6 +4,11 @@ project(port)
 
 if(INCLUDE_FREEIMAGE)
 
+    add_subdirectory(imaging/jpeg)
+    add_subdirectory(imaging/jxr)
+    add_subdirectory(imaging/openexr)
+    add_subdirectory(imaging/openjpeg)
+    add_subdirectory(imaging/tiff4)
     add_subdirectory(imaging/freeimage)
 
 endif()
