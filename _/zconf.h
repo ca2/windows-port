@@ -8,6 +8,9 @@
 #ifndef ZCONF_H
 #define ZCONF_H
 
+#include "zlib/config.h"
+
+
 
 //#include "third_private_c.h"
 
