@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 project(port)
 
 
+add_subdirectory(base/zlib)
+
+
 if(INCLUDE_FREEIMAGE)
 
     add_subdirectory(imaging/jpeg)
@@ -10,6 +13,7 @@ if(INCLUDE_FREEIMAGE)
     add_subdirectory(imaging/openjpeg)
     add_subdirectory(imaging/tiff4)
     add_subdirectory(imaging/freeimage)
+
 
 endif()
 
