@@ -58,3 +58,6 @@ if(INCLUDE_OPENGL)
     add_subdirectory(graphics3d/glad)
 
 endif()
+
+add_subdirectory(graphics/pixman)
+add_subdirectory(graphics/cairo)
