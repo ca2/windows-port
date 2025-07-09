@@ -3,7 +3,9 @@ project(port)
 
 
 add_subdirectory(base/zlib)
-
+if(${WIN32})
+    add_subdirectory(base/sqlite)
+endif()
 
 if(INCLUDE_FREEIMAGE)
 
@@ -31,12 +33,18 @@ endif()
 
 
 
-if(INCLUDE_ICONV)
+if(INCLUDE_ICONV OR NOT ${HAS_SYSTEM_UNAC})
 
     add_subdirectory(base/iconv)
 
 endif()
 
+
+if(NOT ${HAS_SYSTEM_UNAC})
+
+    add_subdirectory(base/unac)
+
+endif()
 
 
 if(INCLUDE_IDN)
