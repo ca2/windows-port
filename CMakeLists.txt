@@ -7,7 +7,12 @@ if(${WIN32})
     add_subdirectory(base/sqlite)
 endif()
 
-if(INCLUDE_FREEIMAGE)
+if(INCLUDE_FREETYPE OR ${INCLUDE_FREEIMAGE} OR ${INCLUDE_IMAGING_FREEIMAGE})
+    add_subdirectory(imaging/png)
+endif()
+
+
+if(${INCLUDE_FREEIMAGE} OR ${INCLUDE_IMAGING_FREEIMAGE})
 
     add_subdirectory(imaging/jpeg)
     add_subdirectory(imaging/jxr)
@@ -15,6 +20,7 @@ if(INCLUDE_FREEIMAGE)
     add_subdirectory(imaging/openjpeg)
     add_subdirectory(imaging/rawlite)
     add_subdirectory(imaging/tiff4)
+    add_subdirectory(imaging/webp)
     add_subdirectory(imaging/freeimage)
 
 
@@ -25,8 +31,6 @@ endif()
 if(INCLUDE_FREETYPE)
 
     set(FT_WITH_PNG_PORT png)
-
-    add_subdirectory(imaging/png)
 
     add_subdirectory(graphics/freetype)
 
