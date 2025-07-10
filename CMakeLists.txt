@@ -3,11 +3,14 @@ project(port)
 
 
 add_subdirectory(base/zlib)
+
+
 if(${WIN32} OR ${ANDROID})
     add_subdirectory(base/sqlite)
 endif()
 
-if(INCLUDE_FREETYPE OR ${INCLUDE_FREEIMAGE} OR ${INCLUDE_IMAGING_FREEIMAGE})
+
+if(${INCLUDE_FREETYPE} OR ${INCLUDE_FREEIMAGE} OR ${INCLUDE_IMAGING_FREEIMAGE})
     add_subdirectory(imaging/png)
 endif()
 
@@ -28,7 +31,7 @@ endif()
 
 
 
-if(INCLUDE_FREETYPE)
+if(${INCLUDE_FREETYPE})
 
     set(FT_WITH_PNG_PORT png)
 
@@ -38,7 +41,7 @@ endif()
 
 
 
-if(INCLUDE_ICONV OR NOT ${HAS_SYSTEM_UNAC})
+if(${INCLUDE_ICONV} OR NOT ${HAS_SYSTEM_UNAC} OR ${INCLUDE_IDN})
 
     add_subdirectory(base/iconv)
 
@@ -52,21 +55,21 @@ if(NOT ${HAS_SYSTEM_UNAC})
 endif()
 
 
-if(INCLUDE_IDN)
+if(${INCLUDE_IDN})
 
     add_subdirectory(base/idn)
 
 endif()
 
 
-if(INCLUDE_AUDIO)
+if(${INCLUDE_AUDIO})
 
     add_subdirectory(base/id3lib)
 
 endif()
 
 
-if(INCLUDE_OPENGL)
+if(${INCLUDE_OPENGL})
 
     add_subdirectory(graphics3d/glad)
 
