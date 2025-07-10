@@ -3,7 +3,7 @@ project(port)
 
 
 add_subdirectory(base/zlib)
-if(${WIN32})
+if(${WIN32} OR ${ANDROID})
     add_subdirectory(base/sqlite)
 endif()
 
