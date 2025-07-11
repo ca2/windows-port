@@ -30,7 +30,6 @@ if(${INCLUDE_FREEIMAGE} OR ${INCLUDE_IMAGING_FREEIMAGE})
 endif()
 
 
-
 if(${INCLUDE_FREETYPE})
 
     set(FT_WITH_PNG_PORT png)
@@ -38,7 +37,6 @@ if(${INCLUDE_FREETYPE})
     add_subdirectory(graphics/freetype)
 
 endif()
-
 
 
 if(${INCLUDE_ICONV} OR NOT ${HAS_SYSTEM_UNAC} OR ${INCLUDE_IDN})
