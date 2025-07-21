@@ -15,3 +15,7 @@
 	path = imaging
 	url = ../imaging-port
 	branch = main
+[submodule "database"]
+	path = database
+	url = ../database-port-windows
+	branch = main
