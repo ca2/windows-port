@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 project(port)
 
 
+add_subdirectory(base/archive)
+add_subdirectory(base/pcre)
 add_subdirectory(base/zlib)
 
 
