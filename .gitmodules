@@ -1,6 +1,3 @@
-[submodule "base-port-windows"]
-	path = base-port-windows
-	url = ../base-port-windows
 [submodule "base"]
 	path = base
 	url = ../windows-port-base
