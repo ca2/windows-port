@@ -1,3 +1,23 @@
 [submodule "base-port-windows"]
 	path = base-port-windows
 	url = ../base-port-windows
+[submodule "base"]
+	path = base
+	url = ../windows-port-base
+	branch = main
+[submodule "common"]
+	path = common
+	url = ../port-common
+	branch = main
+[submodule "database"]
+	path = database
+	url = ../windows-port-database
+	branch = main
+[submodule "graphics"]
+	path = graphics
+	url = ../port-graphics
+	branch = main
+[submodule "imaging"]
+	path = imaging
+	url = ../port-imaging
+	branch = main
