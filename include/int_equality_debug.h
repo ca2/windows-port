@@ -9,8 +9,8 @@ class int_equality_debug :
 {
 public:
    ::array_base < const_char_pointer > m_szaDescription;
-   int_array m_iaOuter;
-   int_array m_iaInner;
+   i32_array m_iaOuter;
+   i32_array m_iaInner;
 
    void add_outer_item(int iOuter, const char * psz)
    {
