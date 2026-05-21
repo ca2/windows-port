@@ -18,7 +18,3 @@
 	path = imaging
 	url = ../port-imaging
 	branch = main
-[submodule "networking"]
-	path = networking
-	url = ../../cpp-port/port-networking
-	branch = main
