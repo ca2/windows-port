@@ -3,10 +3,24 @@ project(port)
 
 set(ZLIB_INCLUDE_DIR "")
 
+
+if(NOT ${USE_SYSTEM_ARCHIVE})
+
 add_subdirectory(base/archive)
+
+endif()
+
+if(NOT ${USE_SYSTEM_PCRE})
+
 add_subdirectory(base/pcre)
+
+endif()
+
+if(NOT ${USE_SYSTEM_ZLIB})
+
 add_subdirectory(base/zlib)
 
+endif()
 
 if(${WIN32} OR ${ANDROID})
     add_subdirectory(base/sqlite)
