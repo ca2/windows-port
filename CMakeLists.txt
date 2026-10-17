@@ -19,6 +19,17 @@ endif()
 if(NOT ${USE_SYSTEM_ZLIB})
 
 add_subdirectory(base/zlib)
+# Keep the compatibility port's static adapter outside the third-party repository.
+if(__REACTOS__ AND TARGET zlib AND NOT TARGET static_zlib)
+    get_target_property(ca2_zlib_sources zlib SOURCES)
+    add_library(static_zlib STATIC ${ca2_zlib_sources})
+    file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/static-zlib-config/zlib")
+    file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/static-zlib-config/zlib/config.h"
+        "#pragma once\n#undef ZLIB_DLL\n#undef Z_HAVE_UNISTD_H\n#undef _LARGEFILE64_SOURCE\n")
+    target_include_directories(static_zlib BEFORE PUBLIC "${CMAKE_CURRENT_BINARY_DIR}/static-zlib-config")
+    target_include_directories(static_zlib BEFORE PUBLIC "$<TARGET_PROPERTY:zlib,INCLUDE_DIRECTORIES>")
+    target_compile_definitions(static_zlib PRIVATE __REACTOS__ _WIN32_WINNT=0x0501 WINVER=0x0501)
+endif()
 
 endif()
 
