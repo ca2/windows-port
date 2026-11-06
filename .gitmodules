@@ -26,3 +26,7 @@
 	path = audio
 	url = ../port-audio
 	branch = main
+[submodule "graphics3d"]
+	path = graphics3d
+	url = ../windows-lowland-port-graphics3d
+	branch = main
