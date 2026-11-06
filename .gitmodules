@@ -22,3 +22,7 @@
 	path = user-generation1
 	url = git@github.com:cpp-port/user-generation1
 	branch = main
+[submodule "audio"]
+	path = audio
+	url = ../port-audio
+	branch = main
