@@ -10,10 +10,6 @@
 	path = database
 	url = ../windows-port-database
 	branch = main
-[submodule "graphics"]
-	path = graphics
-	url = ../port-graphics
-	branch = main
 [submodule "imaging"]
 	path = imaging
 	url = ../port-imaging
@@ -21,4 +17,12 @@
 [submodule "user-generation1"]
 	path = user-generation1
 	url = git@github.com:cpp-port/user-generation1
+	branch = main
+[submodule "audio"]
+	path = audio
+	url = ../port-audio
+	branch = main
+[submodule "graphics3d"]
+	path = graphics3d
+	url = ../windows-lowland-port-graphics3d
 	branch = main
